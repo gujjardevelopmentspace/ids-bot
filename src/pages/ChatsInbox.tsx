@@ -23,7 +23,8 @@ import {
   CheckCheck,
   Reply,
   Forward,
-  Copy
+  Copy,
+  MessageSquare
 } from "lucide-react";
 
 interface Message {
@@ -309,275 +310,278 @@ const ChatsInbox = () => {
   };
 
   return (
-    <div className="flex h-[calc(100vh-200px)] bg-gray-50">
-      {/* Conversations List */}
-      <div className="w-1/3 bg-gray-100 flex flex-col">
-        {/* Header */}
-        <div className="p-4 bg-white border-b border-gray-200">
-          <h1 className="text-xl font-bold text-gray-900">Conversations</h1>
-        </div>
-
-        {/* Search */}
-        <div className="p-4 bg-white border-b border-gray-200">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <Input
-              placeholder="Search"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="p-4 bg-white border-b border-gray-200">
-          <div className="flex space-x-1">
-            <button
-              onClick={() => setActiveTab('all')}
-              className={`px-3 py-2 text-sm font-medium rounded-md flex items-center gap-2 ${
-                activeTab === 'all' 
-                  ? 'bg-[#16a34a] text-white' 
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              All
-              <Badge className={`text-xs ${
-                activeTab === 'all' 
-                  ? 'bg-white text-[#16a34a]' 
-                  : 'bg-gray-200 text-gray-600'
-              }`}>
-                {getTabCount('all')}
-              </Badge>
-            </button>
-            <button
-              onClick={() => setActiveTab('mine')}
-              className={`px-3 py-2 text-sm font-medium rounded-md flex items-center gap-2 ${
-                activeTab === 'mine' 
-                  ? 'bg-[#16a34a] text-white' 
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Mine
-              <Badge className={`text-xs ${
-                activeTab === 'mine' 
-                  ? 'bg-white text-[#16a34a]' 
-                  : 'bg-gray-200 text-gray-600'
-              }`}>
-                {getTabCount('mine')}
-              </Badge>
-            </button>
-            <button
-              onClick={() => setActiveTab('new')}
-              className={`px-3 py-2 text-sm font-medium rounded-md flex items-center gap-2 ${
-                activeTab === 'new' 
-                  ? 'bg-[#16a34a] text-white' 
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              New
-              <Badge className={`text-xs ${
-                activeTab === 'new' 
-                  ? 'bg-white text-[#16a34a]' 
-                  : 'bg-gray-200 text-gray-600'
-              }`}>
-                {getTabCount('new')}
-              </Badge>
-            </button>
-          </div>
-        </div>
-
+    <div className="page-container">
+      <div className="flex h-[calc(100vh-120px)] bg-white rounded-lg overflow-hidden shadow-lg border border-gray-200">
         {/* Conversations List */}
-        <div className="flex-1 overflow-y-auto">
-          {filteredConversations.map((conversation) => (
-            <div
-              key={conversation.id}
-              className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-50 ${
-                selectedChat === conversation.id ? 'bg-blue-50' : ''
-              }`}
-              onClick={() => {
-                setSelectedChat(conversation.id);
-                handleMarkAsRead(conversation.id);
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="relative">
-                  <Avatar className="w-10 h-10 bg-gray-300">
-                    <AvatarFallback className="bg-gray-400 text-white text-sm">
-                      {getInitials(conversation.name)}
-                    </AvatarFallback>
-                  </Avatar>
-                  {conversation.hasStar && (
-                    <div className="absolute -top-1 -right-1">
-                      <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                    </div>
-                  )}
-                  {conversation.unreadCount > 0 && (
-                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                      {conversation.unreadCount}
-                    </div>
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-medium text-gray-900 truncate text-sm">
-                      {conversation.name}
-                    </h3>
-                    <span className="text-xs text-gray-500 ml-2">
-                      {formatTime(conversation.timestamp)}
-                    </span>
+        <div className="w-1/3 bg-white flex flex-col border-r border-gray-200">
+          {/* Header */}
+          <div className="p-6 bg-black border-b border-gray-200">
+            <h1 className="text-2xl font-bold text-white tracking-tight">Conversations</h1>
+            <p className="text-gray-300 text-sm mt-1">Manage your WhatsApp conversations</p>
+          </div>
+
+          {/* Search */}
+          <div className="p-6 bg-white border-b border-gray-200">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                placeholder="Search conversations..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-12 bg-white border-gray-300 focus:border-black focus:ring-black/20 rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* Tabs */}
+          <div className="p-6 bg-white border-b border-gray-200">
+            <div className="flex space-x-2">
+              <button
+                onClick={() => setActiveTab('all')}
+                className={`px-4 py-2.5 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-200 ${
+                  activeTab === 'all' 
+                    ? 'bg-black text-white' 
+                    : 'text-gray-600 hover:text-black hover:bg-gray-100'
+                }`}
+              >
+                All
+                <Badge className={`text-xs font-medium ${
+                  activeTab === 'all' 
+                    ? 'bg-white/20 text-white border-white/30' 
+                    : 'bg-slate-200 text-slate-600'
+                }`}>
+                  {getTabCount('all')}
+                </Badge>
+              </button>
+              <button
+                onClick={() => setActiveTab('mine')}
+                className={`px-4 py-2.5 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-200 ${
+                  activeTab === 'mine' 
+                    ? 'bg-black text-white shadow-lg' 
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                }`}
+              >
+                Mine
+                <Badge className={`text-xs font-medium ${
+                  activeTab === 'mine' 
+                    ? 'bg-white/20 text-white border-white/30' 
+                    : 'bg-slate-200 text-slate-600'
+                }`}>
+                  {getTabCount('mine')}
+                </Badge>
+              </button>
+              <button
+                onClick={() => setActiveTab('new')}
+                className={`px-4 py-2.5 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-200 ${
+                  activeTab === 'new' 
+                    ? 'bg-black text-white shadow-lg' 
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                }`}
+              >
+                New
+                <Badge className={`text-xs font-medium ${
+                  activeTab === 'new' 
+                    ? 'bg-white/20 text-white border-white/30' 
+                    : 'bg-slate-200 text-slate-600'
+                }`}>
+                  {getTabCount('new')}
+                </Badge>
+              </button>
+            </div>
+          </div>
+
+          {/* Conversations List */}
+          <div className="flex-1 overflow-y-auto bg-white/40 backdrop-blur-sm">
+            {filteredConversations.length === 0 ? (
+              <div className="flex items-center justify-center h-full text-slate-500">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <MessageSquare className="w-8 h-8 text-slate-400" />
                   </div>
-                  <p className="text-xs text-gray-600 truncate mt-1">
-                    {conversation.lastMessage}
-                  </p>
-                  <div className="mt-2 flex justify-end">
-                    {conversation.replyStatus === 'expired' ? (
-                      <Button 
-                        size="sm" 
-                        className="bg-red-500 hover:bg-red-600 text-white text-xs px-2 py-1 h-auto"
-                      >
-                        YOU CAN NO LONGER REPLY!
-                      </Button>
-                    ) : (
-                      <Button 
-                        size="sm" 
-                        className="bg-[#16a34a] hover:bg-[#15803d] text-white text-xs px-2 py-1 h-auto"
-                      >
-                        {conversation.hoursLeft} HOURS LEFT TO REPLY
-                      </Button>
-                    )}
-                  </div>
+                  <p className="text-sm font-medium">No conversations found</p>
+                  <p className="text-xs mt-1 text-slate-400">Try adjusting your search or filters</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="flex-1 bg-white flex flex-col">
-        {selectedConversation ? (
-          <>
-            {/* Chat Header */}
-            <div className="p-4 border-b border-gray-200 bg-white">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Avatar className="w-10 h-10 bg-gray-300">
-                    <AvatarFallback className="bg-gray-400 text-white text-sm">
-                      {getInitials(selectedConversation.name)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">{selectedConversation.name}</h3>
-                    <p className="text-sm text-gray-500">{selectedConversation.phone}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Video className="w-4 h-4 mr-2" />
-                    Video
-                  </Button>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="outline" size="sm">
-                        <MoreVertical className="w-4 h-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuItem onClick={() => handleStarConversation(selectedConversation.id)}>
-                        <Star className="w-4 h-4 mr-2" />
-                        {selectedConversation.hasStar ? 'Remove Star' : 'Star Chat'}
-                      </DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => handleArchiveConversation(selectedConversation.id)}>
-                        <Archive className="w-4 h-4 mr-2" />
-                        Archive
-                      </DropdownMenuItem>
-                      <DropdownMenuItem 
-                        className="text-red-600"
-                        onClick={() => handleDeleteConversation(selectedConversation.id)}
-                      >
-                        <Trash2 className="w-4 h-4 mr-2" />
-                        Delete
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div>
-              </div>
-            </div>
-
-            {/* Messages Area */}
-            <div className="flex-1 p-4 bg-gray-50 overflow-y-auto">
-              <div className="space-y-4">
-                {selectedConversation.messages.map((message) => (
-                  <div key={message.id} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                    <div className={`max-w-xs p-3 rounded-lg ${
-                      message.sender === 'user' 
-                        ? 'bg-[#16a34a] text-white' 
-                        : 'bg-white shadow-sm'
-                    }`}>
-                      <p className="text-sm">{message.content}</p>
-                      <div className={`flex items-center justify-end gap-1 mt-1 ${
-                        message.sender === 'user' ? 'text-white/75' : 'text-gray-500'
-                      }`}>
-                        <span className="text-xs">{formatTime(message.timestamp)}</span>
-                        {message.sender === 'user' && getMessageStatusIcon(message.status)}
+            ) : (
+              filteredConversations.map((conversation) => (
+                <div
+                  key={conversation.id}
+                  className={`p-5 border-b border-slate-100 cursor-pointer hover:bg-white/60 transition-all duration-200 ${
+                    selectedChat === conversation.id ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-l-blue-500 shadow-sm' : ''
+                  }`}
+                  onClick={() => {
+                    setSelectedChat(conversation.id);
+                    handleMarkAsRead(conversation.id);
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="relative flex-shrink-0">
+                      <Avatar className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 shadow-lg">
+                        <AvatarFallback className="bg-gradient-to-br from-slate-700 to-slate-800 text-white text-sm font-bold">
+                          {getInitials(conversation.name)}
+                        </AvatarFallback>
+                      </Avatar>
+                      {conversation.hasStar && (
+                        <div className="absolute -top-1 -right-1 bg-yellow-400 rounded-full p-1 shadow-lg">
+                          <Star className="w-3 h-3 text-yellow-600 fill-current" />
+                        </div>
+                      )}
+                      {conversation.unreadCount > 0 && (
+                        <div className="absolute -top-1 -right-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-lg">
+                          {conversation.unreadCount}
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-bold text-slate-900 truncate text-base">
+                          {conversation.name}
+                        </h3>
+                        <span className="text-xs text-slate-500 ml-2 flex-shrink-0 font-medium">
+                          {formatTime(conversation.timestamp)}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 truncate mb-3 leading-relaxed">
+                        {conversation.lastMessage}
+                      </p>
+                      <div className="flex justify-end">
+                        {conversation.replyStatus === 'expired' ? (
+                          <Badge variant="destructive" className="text-xs px-3 py-1.5 font-semibold rounded-full shadow-sm">
+                            EXPIRED
+                          </Badge>
+                        ) : (
+                          <Badge className="bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white text-xs px-3 py-1.5 font-semibold rounded-full shadow-sm">
+                            {conversation.hoursLeft}h LEFT
+                          </Badge>
+                        )}
                       </div>
                     </div>
                   </div>
-                ))}
-                <div ref={messagesEndRef} />
-              </div>
-            </div>
-
-            {/* Message Input */}
-            <div className="p-4 border-t border-gray-200 bg-white">
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm">
-                  <Paperclip className="w-4 h-4" />
-                </Button>
-                <div className="flex-1 relative">
-                  <Textarea
-                    placeholder="Type your message..."
-                    value={newMessage}
-                    onChange={(e) => setNewMessage(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    className="min-h-[40px] max-h-[120px] resize-none"
-                    rows={1}
-                  />
                 </div>
-                <Button variant="outline" size="sm">
-                  <Smile className="w-4 h-4" />
-                </Button>
-                <Button 
-                  onClick={handleSendMessage}
-                  disabled={!newMessage.trim()}
-                  className="bg-[#16a34a] hover:bg-[#15803d] text-white"
-                >
-                  <Send className="w-4 h-4" />
-                </Button>
+              ))
+            )}
+          </div>
+        </div>
+
+        {/* Main Content Area */}
+        <div className="flex-1 bg-gradient-to-br from-white to-slate-50 flex flex-col">
+          {selectedConversation ? (
+            <>
+              {/* Chat Header */}
+              <div className="p-6 border-b border-slate-200 bg-gradient-to-r from-slate-800 to-slate-700">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <Avatar className="w-14 h-14 bg-gradient-to-br from-slate-700 to-slate-800 shadow-lg">
+                      <AvatarFallback className="bg-gradient-to-br from-slate-700 to-slate-800 text-white text-sm font-bold">
+                        {getInitials(selectedConversation.name)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="font-bold text-white text-lg">{selectedConversation.name}</h3>
+                      <p className="text-sm text-slate-300">{selectedConversation.phone}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Button variant="outline" size="sm" className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30">
+                      <Phone className="w-4 h-4" />
+                      Call
+                    </Button>
+                    <Button variant="outline" size="sm" className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30">
+                      <Video className="w-4 h-4" />
+                      Video
+                    </Button>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30">
+                          <MoreVertical className="w-4 h-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => handleStarConversation(selectedConversation.id)}>
+                          <Star className="w-4 h-4 mr-2" />
+                          {selectedConversation.hasStar ? 'Remove Star' : 'Star Chat'}
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => handleArchiveConversation(selectedConversation.id)}>
+                          <Archive className="w-4 h-4 mr-2" />
+                          Archive
+                        </DropdownMenuItem>
+                        <DropdownMenuItem 
+                          className="text-red-600"
+                          onClick={() => handleDeleteConversation(selectedConversation.id)}
+                        >
+                          <Trash2 className="w-4 h-4 mr-2" />
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                </div>
+              </div>
+
+              {/* Messages Area */}
+              <div className="flex-1 p-6 bg-gradient-to-b from-slate-50 to-white overflow-y-auto">
+                <div className="space-y-6 max-w-4xl mx-auto">
+                  {selectedConversation.messages.map((message) => (
+                    <div key={message.id} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                      <div className={`max-w-xs lg:max-w-md p-4 rounded-2xl shadow-lg ${
+                        message.sender === 'user' 
+                          ? 'bg-black text-white' 
+                          : 'bg-white shadow-lg border border-slate-200'
+                      }`}>
+                        <p className="text-sm leading-relaxed font-medium">{message.content}</p>
+                        <div className={`flex items-center justify-end gap-2 mt-3 ${
+                          message.sender === 'user' ? 'text-slate-200' : 'text-slate-500'
+                        }`}>
+                          <span className="text-xs font-medium">{formatTime(message.timestamp)}</span>
+                          {message.sender === 'user' && getMessageStatusIcon(message.status)}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <div ref={messagesEndRef} />
+                </div>
+              </div>
+
+              {/* Message Input */}
+              <div className="p-6 border-t border-slate-200 bg-gradient-to-r from-white to-slate-50">
+                <div className="flex items-end gap-3 max-w-4xl mx-auto">
+                  <Button variant="outline" size="sm" className="flex-shrink-0 bg-white border-slate-300 hover:bg-slate-50 shadow-sm">
+                    <Paperclip className="w-4 h-4" />
+                  </Button>
+                  <div className="flex-1 relative">
+                    <Textarea
+                      placeholder="Type your message..."
+                      value={newMessage}
+                      onChange={(e) => setNewMessage(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      className="min-h-[48px] max-h-[120px] resize-none pr-12 bg-white border-slate-300 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl shadow-sm"
+                      rows={1}
+                    />
+                  </div>
+                  <Button variant="outline" size="sm" className="flex-shrink-0 bg-white border-slate-300 hover:bg-slate-50 shadow-sm">
+                    <Smile className="w-4 h-4" />
+                  </Button>
+                  <Button 
+                    onClick={handleSendMessage}
+                    disabled={!newMessage.trim()}
+                    className="bg-black hover:bg-gray-800 text-white flex-shrink-0 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <Send className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="flex items-center justify-center h-full bg-gradient-to-br from-slate-50 to-slate-100">
+              <div className="text-center text-slate-600">
+                <div className="w-20 h-20 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <MessageSquare className="w-10 h-10 text-slate-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Select a conversation</h3>
+                <p className="text-sm text-slate-500 max-w-sm">Choose a conversation from the list to start messaging and manage your WhatsApp communications</p>
               </div>
             </div>
-          </>
-        ) : (
-          <div className="flex items-center justify-center h-full">
-            <div className="text-center text-gray-500">
-              <p className="text-lg">Select a conversation to view messages</p>
-            </div>
-          </div>
-        )}
-        
-        {/* Floating Action Button */}
-        <div className="absolute bottom-6 right-6">
-          <Button 
-            size="sm" 
-            className="w-10 h-10 bg-gray-800 hover:bg-gray-900 text-yellow-400 p-0"
-          >
-            <Star className="w-5 h-5" />
-          </Button>
+          )}
         </div>
       </div>
     </div>

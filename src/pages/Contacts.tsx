@@ -187,7 +187,7 @@ const Contacts = () => {
             <FileText className="w-4 h-4 mr-2" />
             <span className="hidden sm:inline">Fields</span>
           </Button>
-          <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+          <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25">
             <Download className="w-4 h-4 mr-2" />
             <span className="hidden sm:inline">Export</span>
           </Button>
@@ -299,7 +299,7 @@ const Contacts = () => {
 
           {/* Filter Buttons */}
           <div className="flex items-center gap-2 mt-4">
-            <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25">
               <Filter className="w-4 h-4 mr-2" />
               Filter
             </Button>

@@ -79,7 +79,7 @@ const Layout = ({ children }: LayoutProps) => {
     { id: "agency", label: "Agency Reseller", icon: UserCheck, path: "/agency-reseller" },
     { id: "chat-agents", label: "Chat Agents", icon: MessageCircle, path: "/chat-agents" },
     { id: "agent-management", label: "Agent Management", icon: Bot, path: "/agent-management" },
-    { id: "wapi-settings", label: "Wapi Settings", icon: Settings, path: "/wapi-settings" },
+    { id: "wapi-settings", label: "Ideas bot Settings", icon: Settings, path: "/wapi-settings" },
     { id: "api", label: "API", icon: Code, path: "/api" },
   ];
 
@@ -121,10 +121,16 @@ const Layout = ({ children }: LayoutProps) => {
           {/* Logo Section */}
           <div className="p-6 border-b border-border/50">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-primary-foreground font-bold text-lg">i</span>
+              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                <img src="/favicon.svg" alt="Inventer Design Studio" className="w-5 h-5" />
               </div>
-              <h1 className="text-xl font-bold text-foreground">idea bot</h1>
+              <div className="flex flex-col">
+                <h1 className="text-xl font-bold text-black">Inventer Design Studio</h1>
+                <div className="flex items-center gap-1 text-xs text-gray-600">
+                  <Zap className="w-3 h-3 text-gray-500" />
+                  <span>WhatsApp Business API</span>
+                </div>
+              </div>
             </div>
           </div>
         
@@ -194,7 +200,7 @@ const Layout = ({ children }: LayoutProps) => {
                   <Globe className="w-4 h-4" />
                   English
                 </Button>
-                <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                <Button className="bg-black hover:bg-gray-800 text-white">
                   <HelpCircle className="w-4 h-4 mr-2" />
                   Support
                 </Button>
@@ -203,8 +209,8 @@ const Layout = ({ children }: LayoutProps) => {
               {/* Right Section - User info and logout */}
               <div className="flex items-center gap-3 shrink-0">
                 <div className="flex items-center gap-3">
-                  <Avatar className="w-8 h-8 bg-blue-600">
-                    <AvatarFallback className="text-white text-sm">U</AvatarFallback>
+                  <Avatar className="w-8 h-8 bg-black">
+                    <AvatarFallback className="text-white text-sm font-bold">U</AvatarFallback>
                   </Avatar>
                   <div className="hidden lg:block text-right">
                     <p className="text-sm font-medium text-gray-800">Muhammad Abdullah Qureshi</p>
@@ -230,14 +236,20 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="fixed inset-0 bg-black/50" onClick={() => setIsMobileMenuOpen(false)} />
           <div className="fixed left-0 top-0 h-full w-64 bg-card/95 backdrop-blur-sm border-r border-border/50">
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-lg">
-                    <span className="text-primary-foreground font-bold text-lg">i</span>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                      <img src="/favicon.svg" alt="Inventer Design Studio" className="w-5 h-5" />
+                    </div>
+                    <div className="flex flex-col">
+                      <h1 className="text-xl font-bold text-black">Inventer Design Studio</h1>
+                      <div className="flex items-center gap-1 text-xs text-gray-600">
+                        <Zap className="w-3 h-3 text-gray-500" />
+                        <span>WhatsApp Business API</span>
+                      </div>
+                    </div>
                   </div>
-                  <h1 className="text-xl font-bold text-foreground">idea bot</h1>
-                </div>
                 <Button 
                   variant="outline" 
                   size="sm"

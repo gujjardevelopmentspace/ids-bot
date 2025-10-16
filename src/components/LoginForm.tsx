@@ -4,9 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
-import { Facebook, Mail } from "lucide-react";
+import { Facebook, Mail, Bot, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logo from "@/assets/logo.png";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +21,7 @@ export const LoginForm = () => {
     const demoPassword = "demo123";
     
     if (email === demoEmail && password === demoPassword) {
-      toast.success("Login successful! Welcome to idea bot Dashboard");
+      toast.success("Login successful! Welcome to Ideas bot Dashboard");
       // Store login state in localStorage
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("userEmail", email);
@@ -43,8 +42,16 @@ export const LoginForm = () => {
       <div className="w-full max-w-md space-y-6 lg:space-y-8">
         <div className="text-center space-y-2">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <img src={logo} alt="idea bot Logo" className="w-12 h-12" />
-            <h1 className="text-3xl font-bold text-foreground">idea bot</h1>
+            <div className="w-12 h-12 bg-gradient-to-br from-[#16a34a] to-[#15803d] rounded-xl flex items-center justify-center shadow-lg">
+              <Bot className="w-7 h-7 text-white" />
+            </div>
+            <div className="flex flex-col items-start">
+                <h1 className="text-3xl font-bold text-foreground">Ideas bot</h1>
+                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Zap className="w-3 h-3 text-yellow-500" />
+                  <span>WhatsApp Business API</span>
+                </div>
+            </div>
           </div>
         </div>
 
@@ -179,67 +186,6 @@ export const LoginForm = () => {
               Free Signup.
             </a>
           </p>
-
-          {/* Signup Section with Twilio */}
-          <div className="bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-lg p-4">
-            <div className="text-center space-y-2">
-              <h3 className="text-sm font-semibold text-foreground">New to idea bot?</h3>
-              <p className="text-xs text-muted-foreground">
-                Create your account and start building amazing WhatsApp experiences
-              </p>
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full h-10 text-sm"
-                onClick={() => toast.info("Sign up would be implemented here")}
-              >
-                Create Free Account
-              </Button>
-              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                <span>Powered by</span>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="h-6 px-2 text-xs font-medium text-primary hover:text-primary/80"
-                  onClick={() => {
-                    window.open('https://www.twilio.com/en-us', '_blank', 'noopener,noreferrer');
-                  }}
-                >
-                  Twilio
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Twilio Integration */}
-          <div className="border-t border-border pt-4">
-            <div className="text-center space-y-2">
-              <p className="text-xs text-muted-foreground">Powered by</p>
-              <a
-                href="https://www.twilio.com/en-us"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 hover:underline transition-colors cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open('https://www.twilio.com/en-us', '_blank', 'noopener,noreferrer');
-                }}
-              >
-                <svg
-                  className="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16c-.169 0-.315.063-.436.169-.121.106-.182.24-.182.4v6.542c0 .16.061.294.182.4.121.106.267.169.436.169.169 0 .315-.063.436-.169.121-.106.182-.24.182-.4V8.729c0-.16-.061-.294-.182-.4-.121-.106-.267-.169-.436-.169zM12 6.4c.169 0 .315.063.436.169.121.106.182.24.182.4v6.542c0 .16-.061.294-.182.4-.121.106-.267.169-.436.169-.169 0-.315-.063-.436-.169-.121-.106-.182-.24-.182-.4V6.969c0-.16.061-.294.182-.4.121-.106.267-.169.436-.169zM6.432 8.16c-.169 0-.315.063-.436.169-.121.106-.182.24-.182.4v6.542c0 .16.061.294.182.4.121.106.267.169.436.169.169 0 .315-.063.436-.169.121-.106.182-.24.182-.4V8.729c0-.16-.061-.294-.182-.4-.121-.106-.267-.169-.436-.169z"/>
-                </svg>
-                Twilio
-              </a>
-              <p className="text-xs text-muted-foreground">
-                Communication platform for SMS, voice, email, chat, and WhatsApp.
-              </p>
-            </div>
-          </div>
         </form>
       </div>
     </div>

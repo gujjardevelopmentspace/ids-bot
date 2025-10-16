@@ -118,7 +118,7 @@ const Brand = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" id="branding-header" data-testid="branding-header">
         <h1 className="text-2xl lg:text-3xl font-bold text-gray-900" id="branding-title" data-testid="branding-title">Brands</h1>
         <Button 
-          className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+          className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
           onClick={() => navigate('/create-brand')}
           id="branding-create-button"
           data-testid="branding-create-button"
@@ -290,7 +290,7 @@ const Brand = () => {
                   onClick={() => handlePageChange(page)}
                   className={`h-8 w-8 p-0 ${
                     currentPage === page 
-                      ? "bg-[#16a34a] hover:bg-[#15803d] text-white" 
+                      ? "bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white" 
                       : ""
                   }`}
                   id={`branding-page-${page}`}

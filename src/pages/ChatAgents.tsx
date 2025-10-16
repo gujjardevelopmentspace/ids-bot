@@ -305,7 +305,7 @@ const ChatAgents = () => {
             resetForm();
             setIsCreateModalOpen(true);
           }}
-          className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+          className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
         >
           <Plus className="w-4 h-4 mr-2" />
           Add Agent
@@ -403,7 +403,7 @@ const ChatAgents = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <div className="w-10 h-10 bg-[#16a34a] rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
                       {agent.role === 'Bot Agent' ? (
                         <Bot className="w-5 h-5 text-white" />
                       ) : (
@@ -583,7 +583,7 @@ const ChatAgents = () => {
             }}>
               Cancel
             </Button>
-            <Button onClick={handleCreateAgent} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button onClick={handleCreateAgent} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Create Agent
             </Button>
           </div>
@@ -675,7 +675,7 @@ const ChatAgents = () => {
             }}>
               Cancel
             </Button>
-            <Button onClick={handleUpdateAgent} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button onClick={handleUpdateAgent} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Update Agent
             </Button>
           </div>
@@ -692,7 +692,7 @@ const ChatAgents = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="relative">
-                  <div className="w-16 h-16 bg-[#16a34a] rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
                     {viewingAgent.role === 'Bot Agent' ? (
                       <Bot className="w-8 h-8 text-white" />
                     ) : (
@@ -760,7 +760,7 @@ const ChatAgents = () => {
             <Button onClick={() => {
               setIsViewModalOpen(false);
               if (viewingAgent) handleEditAgent(viewingAgent);
-            }} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            }} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Edit Agent
             </Button>
           </div>

@@ -156,14 +156,14 @@ const PhoneNumbers = () => {
               <CardContent className="p-6 h-full flex flex-col">
                 {/* Header with Logo and Price */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#16a34a] rounded-lg flex items-center justify-center shadow-sm">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-sm">
                     <div className="text-white">
                       {provider.logo}
                     </div>
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-gray-900 text-lg">{provider.name}</h3>
-                    <p className="text-[#16a34a] font-semibold text-sm">{provider.price}</p>
+                     <p className="text-black font-semibold text-sm">{provider.price}</p>
                   </div>
                 </div>
                 

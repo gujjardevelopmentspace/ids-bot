@@ -1,0 +1,23 @@
+<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Inventer Design Studio Full Logo -->
+  
+  <!-- Main Logo Icon -->
+  <rect x="20" y="20" width="40" height="40" rx="8" fill="#000000"/>
+  
+  <!-- Letter "I" for Inventer -->
+  <rect x="28" y="28" width="4" height="24" fill="#ffffff"/>
+  <rect x="26" y="28" width="8" height="4" fill="#ffffff"/>
+  
+  <!-- Letter "D" for Design -->
+  <path d="M36 28 L36 52 L44 52 Q50 52 50 40 Q50 28 44 28 L36 28 Z M40 32 L44 32 Q48 32 48 40 Q48 48 44 48 L40 48 L40 32 Z" fill="#ffffff"/>
+  
+  <!-- Letter "S" for Studio -->
+  <path d="M52 32 Q52 28 48 28 L48 32 Q48 30 50 30 Q52 30 52 32 Q52 34 50 34 L48 34 L48 38 Q48 42 52 42 Q56 42 56 38 Q56 34 52 34 Z M52 38 Q52 40 48 40 L48 38 Q48 39 50 39 Q52 39 52 38 Q52 37 50 37 L48 37 L48 34 Q48 30 52 30 Q56 30 56 34 Q56 38 52 38 L52 38 Z" fill="#ffffff"/>
+  
+  <!-- Company Name -->
+  <text x="80" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#000000">Inventer Design Studio</text>
+  <text x="80" y="55" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Professional WhatsApp Business API Platform</text>
+  
+  <!-- Decorative Line -->
+  <line x1="80" y1="60" x2="280" y2="60" stroke="#e5e7eb" stroke-width="1"/>
+</svg>

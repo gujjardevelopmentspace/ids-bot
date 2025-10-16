@@ -310,7 +310,7 @@ const ReplyBots = () => {
         <div className="flex items-center gap-2">
           <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 <Plus className="w-4 h-4 mr-2" />
                 Create Bot
               </Button>
@@ -384,14 +384,14 @@ const ReplyBots = () => {
                   <Button variant="outline" onClick={() => setIsCreateModalOpen(false)}>
                     Cancel
                   </Button>
-                  <Button onClick={handleCreateBot} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                  <Button onClick={handleCreateBot} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                     Create Bot
                   </Button>
                 </div>
               </div>
             </DialogContent>
           </Dialog>
-          <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+          <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
             Upgrade
           </Button>
         </div>
@@ -458,7 +458,7 @@ const ReplyBots = () => {
 
             {/* Filter Buttons */}
             <div className="flex items-center gap-2 mt-4">
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 <Filter className="w-4 h-4 mr-2" />
                 Filter
               </Button>
@@ -482,7 +482,7 @@ const ReplyBots = () => {
                       {/* Bot Header */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-[#16a34a] rounded-full flex items-center justify-center">
+                          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
                             <Bot className="w-5 h-5 text-white" />
                           </div>
                           <div>
@@ -587,7 +587,7 @@ const ReplyBots = () => {
             <div className="flex flex-col items-center justify-center py-16">
               <div className="relative mb-6">
                 {/* Main folder with X */}
-                <div className="w-24 h-24 bg-[#16a34a] rounded-lg flex items-center justify-center relative z-10">
+                <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center relative z-10">
                   <FolderX className="w-12 h-12 text-white" />
                 </div>
                 
@@ -605,7 +605,7 @@ const ReplyBots = () => {
                     {/* Hair */}
                     <div className="w-10 h-6 bg-gray-800 rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
                     {/* Body */}
-                    <div className="w-8 h-12 bg-[#16a34a] rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
+                    <div className="w-8 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
                     {/* Skirt */}
                     <div className="w-10 h-8 bg-black absolute top-16 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
                     <div className="w-2 h-2 bg-white absolute top-18 left-1/2 transform -translate-x-1/2 rounded"></div>
@@ -694,7 +694,7 @@ const ReplyBots = () => {
               <Button variant="outline" onClick={() => setIsEditModalOpen(false)}>
                 Cancel
               </Button>
-              <Button onClick={handleUpdateBot} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button onClick={handleUpdateBot} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 Update Bot
               </Button>
             </div>

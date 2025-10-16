@@ -216,7 +216,7 @@ const Templates = () => {
 
           {/* Filter Buttons */}
           <div className="flex items-center gap-2 mt-4">
-            <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25">
               <Filter className="w-4 h-4 mr-2" />
               Filter
             </Button>
@@ -237,7 +237,7 @@ const Templates = () => {
           <div className="flex flex-col items-center justify-center py-12">
             <div className="relative mb-6">
               {/* Main folder with X */}
-              <div className="w-24 h-24 bg-[#16a34a] rounded-lg flex items-center justify-center relative z-10">
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center relative z-10">
                 <FolderX className="w-12 h-12 text-white" />
               </div>
               
@@ -255,7 +255,7 @@ const Templates = () => {
                   {/* Hair */}
                   <div className="w-10 h-6 bg-gray-800 rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
                   {/* Body */}
-                  <div className="w-8 h-12 bg-[#16a34a] rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
+                  <div className="w-8 h-12 bg-gradient-to-b from-blue-600 to-indigo-600 rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
                   {/* Skirt */}
                   <div className="w-10 h-8 bg-black absolute top-16 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
                   <div className="w-2 h-2 bg-white absolute top-18 left-1/2 transform -translate-x-1/2 rounded"></div>

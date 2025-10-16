@@ -46,7 +46,7 @@ const ContactsImport = () => {
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Contacts Import - Flaxxa Wapi</h1>
         </div>
-        <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+        <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
           Logs
         </Button>
       </div>
@@ -121,7 +121,7 @@ const ContactsImport = () => {
                 <Button
                   onClick={handleImport}
                   disabled={!selectedFile}
-                  className="bg-[#16a34a] hover:bg-[#15803d] text-white px-8 py-3"
+                  className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white px-8 py-3"
                 >
                   Import contact
                 </Button>

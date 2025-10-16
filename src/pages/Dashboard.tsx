@@ -61,32 +61,32 @@ const Dashboard = () => {
       title: "Send Campaign", 
       description: "Broadcast messages to your audience",
       icon: Megaphone, 
-      color: "text-[#16a34a]",
-      bgColor: "bg-green-50",
+      color: "text-black",
+      bgColor: "bg-gray-50",
       action: "Create and send targeted campaigns"
     },
     { 
       title: "Add Contact", 
       description: "Import or create new contacts",
       icon: User, 
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "text-black",
+      bgColor: "bg-gray-50",
       action: "Expand your contact database"
     },
     { 
       title: "Create Bot", 
       description: "Set up automated responses",
       icon: ArrowRightLeft, 
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
+      color: "text-black",
+      bgColor: "bg-gray-50",
       action: "Automate customer interactions"
     },
     { 
       title: "New Template", 
       description: "Design message templates",
       icon: FileTemplateIcon, 
-      color: "text-orange-600",
-      bgColor: "bg-orange-50",
+      color: "text-black",
+      bgColor: "bg-gray-50",
       action: "Create reusable message formats"
     }
   ];
@@ -221,10 +221,10 @@ const Dashboard = () => {
 
   // Knowledgebase Links
   const knowledgebaseLinks = [
-    "Get started with idea bot",
+    "Get started with Ideas bot",
     "How to Create and Import Contacts?",
-    "How to Add your WhatsApp Number with idea bot?",
-    "How to Create Broadcast Campaigns in idea bot?",
+    "How to Add your WhatsApp Number with Ideas bot?",
+    "How to Create Broadcast Campaigns in Ideas bot?",
     "How to Create a New WhatsApp Marketing Template from Scratch?",
     "Learn How to Create Effective WhatsApp Message Templates?",
     "Steps to Use Phone Number that has been Registered with WhatsApp Business Before"
@@ -234,7 +234,7 @@ const Dashboard = () => {
     return (
       <div className="p-6 flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-[#16a34a]" />
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-black" />
           <p className="text-gray-600">Loading your dashboard...</p>
         </div>
       </div>
@@ -266,11 +266,14 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-24 h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-primary/20">
-                <Smartphone className="w-12 h-12 lg:w-16 lg:h-16 text-primary" />
+              <div className="w-24 h-24 lg:w-32 lg:h-32 bg-gray-50 rounded-2xl flex items-center justify-center border border-gray-200">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-black mb-1">IDS</div>
+                  <div className="text-xs text-gray-600">Inventer Design Studio</div>
+                </div>
               </div>
-              <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
-                <Bot className="w-10 h-10 lg:w-12 lg:h-12 text-primary-foreground" />
+              <div className="w-20 h-20 lg:w-24 lg:h-24 bg-black rounded-full flex items-center justify-center shadow-lg">
+                <img src="/favicon.svg" alt="Inventer Design Studio" className="w-10 h-10 lg:w-12 lg:h-12" />
               </div>
             </div>
           </div>
@@ -351,19 +354,19 @@ const Dashboard = () => {
         </Card>
 
         {/* Templates Section */}
-        <Card className="bg-white border-0 shadow-lg">
+        <Card className="bg-white border border-gray-200">
           <CardContent className="p-6 flex flex-col h-full">
             <div className="flex justify-between items-start mb-4">
-              <FileTemplateIcon className="w-8 h-8 text-[#16a34a]" />
+              <FileTemplateIcon className="w-8 h-8 text-black" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="text-xl font-bold mb-3 text-black">
               Templates
             </h3>
             <p className="text-sm mb-6 text-gray-600 flex-grow">
               WhatsApp Templates can be anything ranging from promotional messages, product launches, weekly newsletters, abandoned cart reminders, festive greetings and much more.
             </p>
             <Button 
-              className="w-full bg-[#16a34a] hover:bg-[#15803d] text-white mt-auto"
+              className="w-full bg-black hover:bg-gray-800 text-white mt-auto"
             >
               Use Now
             </Button>
@@ -371,19 +374,19 @@ const Dashboard = () => {
         </Card>
 
         {/* Campaigns Section */}
-        <Card className="bg-white border-0 shadow-lg">
+        <Card className="bg-white border border-gray-200">
           <CardContent className="p-6 flex flex-col h-full">
             <div className="flex justify-between items-start mb-4">
-              <Megaphone className="w-8 h-8 text-[#16a34a]" />
+              <Megaphone className="w-8 h-8 text-black" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="text-xl font-bold mb-3 text-black">
               Campaigns
             </h3>
             <p className="text-sm mb-6 text-gray-600 flex-grow">
               WhatsApp Campaign lets you send new messages to individuals and to your groups and interact with customers directly.
             </p>
             <Button 
-              className="w-full bg-[#16a34a] hover:bg-[#15803d] text-white mt-auto"
+              className="w-full bg-black hover:bg-gray-800 text-white mt-auto"
             >
               Send New Campaigns
             </Button>
@@ -439,7 +442,7 @@ const Dashboard = () => {
               <span className="text-sm text-gray-700">Start sharing the products with your users</span>
             </div>
             <div className="pt-4">
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white">
                 Connect Catalogue
               </Button>
             </div>
@@ -493,7 +496,7 @@ const Dashboard = () => {
 
       {/* Footer */}
       <div className="text-center text-sm text-gray-500 py-4">
-        https://idea-bot.com/dashboard
+        https://ideas-bot.com/dashboard
       </div>
     </div>
   );

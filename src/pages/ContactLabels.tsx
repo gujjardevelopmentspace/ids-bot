@@ -109,11 +109,11 @@ const ContactLabels = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-[#16a34a]">Contact Lables</h1>
+          <h1 className="text-3xl font-bold text-blue-600">Contact Lables</h1>
         </div>
         <div className="flex items-center gap-2">
           <Button 
-            className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+            className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
             onClick={() => setShowAddModal(true)}
           >
             <Plus className="w-4 h-4 mr-2" />
@@ -398,7 +398,7 @@ const ContactLabels = () => {
                 </Button>
                 <Button
                   onClick={handleAddLabel}
-                  className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+                  className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
                 >
                   Add Label
                 </Button>

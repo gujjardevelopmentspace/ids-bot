@@ -442,7 +442,7 @@ const CommerceCatalogue = () => {
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Commerce Catalogue - Flaxxa Wapi</h1>
         </div>
-        <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+        <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
           Upgrade
         </Button>
       </div>
@@ -453,7 +453,7 @@ const CommerceCatalogue = () => {
           onClick={() => setActiveTab('facebook')}
           className={`px-4 py-2 text-sm font-medium rounded-md ${
             activeTab === 'facebook' 
-              ? 'bg-[#16a34a] text-white' 
+              ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white' 
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
@@ -463,7 +463,7 @@ const CommerceCatalogue = () => {
           onClick={() => setActiveTab('catalogue')}
           className={`px-4 py-2 text-sm font-medium rounded-md ${
             activeTab === 'catalogue' 
-              ? 'bg-[#16a34a] text-white' 
+              ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white' 
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
@@ -473,7 +473,7 @@ const CommerceCatalogue = () => {
           onClick={() => setActiveTab('orders')}
           className={`px-4 py-2 text-sm font-medium rounded-md ${
             activeTab === 'orders' 
-              ? 'bg-[#16a34a] text-white' 
+              ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white' 
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
@@ -515,7 +515,7 @@ const CommerceCatalogue = () => {
 
             {/* Upgrade Button */}
             <div className="flex justify-start">
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white px-6 py-2">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white px-6 py-2">
                 Upgrade
               </Button>
             </div>
@@ -533,7 +533,7 @@ const CommerceCatalogue = () => {
               <div className="flex gap-2">
                 <Dialog open={isCreateItemModalOpen} onOpenChange={setIsCreateItemModalOpen}>
                   <DialogTrigger asChild>
-                    <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                    <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                       <Plus className="w-4 h-4 mr-2" />
                       Add Item
                     </Button>
@@ -611,13 +611,13 @@ const CommerceCatalogue = () => {
                       <Button variant="outline" onClick={() => setIsCreateItemModalOpen(false)}>
                         Cancel
                       </Button>
-                      <Button onClick={handleCreateItem} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                      <Button onClick={handleCreateItem} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                         Create Item
                       </Button>
                     </div>
                   </DialogContent>
                 </Dialog>
-                <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                   Order Automation Templates
                 </Button>
               </div>
@@ -841,7 +841,7 @@ const CommerceCatalogue = () => {
                 <h2 className="text-2xl font-bold text-gray-900">Manage Orders</h2>
                 <Dialog open={isCreateOrderModalOpen} onOpenChange={setIsCreateOrderModalOpen}>
                   <DialogTrigger asChild>
-                    <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                    <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                       <Plus className="w-4 h-4 mr-2" />
                       Add Order
                     </Button>
@@ -932,7 +932,7 @@ const CommerceCatalogue = () => {
                       <Button variant="outline" onClick={() => setIsCreateOrderModalOpen(false)}>
                         Cancel
                       </Button>
-                      <Button onClick={handleCreateOrder} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                      <Button onClick={handleCreateOrder} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                         Create Order
                       </Button>
                     </div>
@@ -979,7 +979,7 @@ const CommerceCatalogue = () => {
                 </div>
               </div>
               <div className="flex gap-2">
-                <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                   <Search className="w-4 h-4 mr-2" />
                   Search
                 </Button>
@@ -1254,7 +1254,7 @@ const CommerceCatalogue = () => {
             <Button variant="outline" onClick={() => setIsEditItemModalOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleUpdateItem} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button onClick={handleUpdateItem} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Update Item
             </Button>
           </div>
@@ -1349,7 +1349,7 @@ const CommerceCatalogue = () => {
             <Button variant="outline" onClick={() => setIsEditOrderModalOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleUpdateOrder} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button onClick={handleUpdateOrder} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Update Order
             </Button>
           </div>

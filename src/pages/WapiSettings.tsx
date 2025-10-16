@@ -71,7 +71,7 @@ const WapiSettings = () => {
             <RefreshCw className="w-4 h-4 mr-2" />
             Test Connection
           </Button>
-          <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white" onClick={handleSave}>
+          <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white" onClick={handleSave}>
             <Save className="w-4 h-4 mr-2" />
             Save Settings
           </Button>

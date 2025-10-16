@@ -408,7 +408,7 @@ print(response.json())`,
                   className="mt-1"
                 />
               </div>
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 <Globe className="w-4 h-4 mr-2" />
                 Save Webhook
               </Button>

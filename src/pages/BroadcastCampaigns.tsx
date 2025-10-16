@@ -327,7 +327,7 @@ const BroadcastCampaigns = () => {
                   <Button variant="outline" onClick={() => setIsCreateModalOpen(false)}>
                     Cancel
                   </Button>
-                  <Button onClick={handleCreateCampaign} className="bg-[#16a34a] hover:bg-[#15803d]">
+                  <Button onClick={handleCreateCampaign} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25">
           Create Campaign
         </Button>
                 </div>
@@ -398,7 +398,7 @@ const BroadcastCampaigns = () => {
               </Button>
             </div>
             <div className="flex items-center gap-4">
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 View Details
               </Button>
               <Badge className="bg-orange-500 text-white">
@@ -446,7 +446,7 @@ const BroadcastCampaigns = () => {
               />
             </div>
             <div className="flex items-end gap-2">
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               <Filter className="w-4 h-4 mr-2" />
               Filter
             </Button>
@@ -618,7 +618,7 @@ const BroadcastCampaigns = () => {
               <Button variant="outline" onClick={() => setIsEditModalOpen(false)}>
                 Cancel
               </Button>
-              <Button onClick={handleUpdateCampaign} className="bg-[#16a34a] hover:bg-[#15803d]">
+              <Button onClick={handleUpdateCampaign} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25">
                 Update Campaign
               </Button>
             </div>

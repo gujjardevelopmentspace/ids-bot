@@ -282,7 +282,7 @@ const AgencyReseller = () => {
         <div className="flex gap-2">
           <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 <Plus className="w-4 h-4 mr-2" />
                 Add Client
               </Button>
@@ -400,7 +400,7 @@ const AgencyReseller = () => {
                 <Button variant="outline" onClick={() => setIsCreateModalOpen(false)}>
                   Cancel
                 </Button>
-                <Button onClick={handleCreateClient} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                <Button onClick={handleCreateClient} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                   Create Client
                 </Button>
               </div>
@@ -408,7 +408,7 @@ const AgencyReseller = () => {
           </Dialog>
           <Button 
             onClick={handleMainUpgrade}
-            className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+            className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
           >
             Upgrade
           </Button>
@@ -425,7 +425,7 @@ const AgencyReseller = () => {
             className="w-full"
           />
         </div>
-        <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+        <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
           <Search className="w-4 h-4" />
         </Button>
       </div>
@@ -737,7 +737,7 @@ const AgencyReseller = () => {
             <Button variant="outline" onClick={() => setIsEditModalOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleUpdateClient} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button onClick={handleUpdateClient} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Update Client
             </Button>
           </div>
@@ -802,7 +802,7 @@ const AgencyReseller = () => {
                   setIsUpgradeModalOpen(false);
                   toast.success("Upgrade request submitted! Our team will contact you soon.");
                 }}
-                className="flex-1 bg-[#16a34a] hover:bg-[#15803d] text-white"
+                className="flex-1 bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
               >
                 Upgrade Now
               </Button>

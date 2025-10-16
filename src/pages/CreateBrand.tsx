@@ -245,7 +245,7 @@ const CreateBrand = () => {
               <div className="pt-6">
                 <Button 
                   type="submit" 
-                  className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+                  className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
                   id="branding-create-submit"
                   data-testid="branding-create-submit"
                 >
@@ -264,19 +264,19 @@ const CreateBrand = () => {
           <CardContent>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-[#16a34a] font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Enter your brand name, description & logo.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#16a34a] font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Select your preferred time zone.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#16a34a] font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Enter your company name.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#16a34a] font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Enter your phone number For example, a US number 555-123-4567 should be formatted as +15551234567</span>
               </li>
             </ul>

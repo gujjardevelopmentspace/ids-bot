@@ -275,7 +275,7 @@ const AgentManagement = () => {
         <div className="flex gap-2">
           <Button 
             onClick={handleOpenCreateModal}
-            className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+            className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
           >
             <Plus className="w-4 h-4 mr-2" />
             Add Agent
@@ -402,7 +402,7 @@ const AgentManagement = () => {
                 }}>
                   Cancel
                 </Button>
-                <Button onClick={handleCreateAgent} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+                <Button onClick={handleCreateAgent} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                   Create Agent
                 </Button>
               </div>
@@ -410,7 +410,7 @@ const AgentManagement = () => {
           </Dialog>
           <Button 
             onClick={handleUpgrade}
-            className="bg-[#16a34a] hover:bg-[#15803d] text-white"
+            className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
           >
             upgrade
           </Button>
@@ -465,7 +465,7 @@ const AgentManagement = () => {
             className="w-full"
           />
         </div>
-        <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+        <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
           <Search className="w-4 h-4" />
         </Button>
       </div>
@@ -628,7 +628,7 @@ const AgentManagement = () => {
               {/* Illustration */}
               <div className="relative mb-8">
                 {/* Main folder with X */}
-                <div className="w-24 h-24 bg-[#16a34a] rounded-lg flex items-center justify-center relative z-10">
+                <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center relative z-10">
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                     <FolderX className="w-8 h-8 text-gray-400" />
                   </div>
@@ -648,7 +648,7 @@ const AgentManagement = () => {
                     {/* Hair */}
                     <div className="w-10 h-6 bg-gray-800 rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
                     {/* Body */}
-                    <div className="w-8 h-12 bg-[#16a34a] rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
+                    <div className="w-8 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
                     {/* Skirt */}
                     <div className="w-10 h-8 bg-black absolute top-16 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
                     <div className="w-2 h-2 bg-white absolute top-18 left-1/2 transform -translate-x-1/2 rounded"></div>
@@ -793,7 +793,7 @@ const AgentManagement = () => {
             <Button variant="outline" onClick={() => setIsEditModalOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleUpdateAgent} className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+            <Button onClick={handleUpdateAgent} className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
               Update Agent
             </Button>
           </div>
@@ -858,7 +858,7 @@ const AgentManagement = () => {
                   setIsUpgradeModalOpen(false);
                   toast.success("Upgrade request submitted! Our team will contact you soon.");
                 }}
-                className="flex-1 bg-[#16a34a] hover:bg-[#15803d] text-white"
+                className="flex-1 bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white"
               >
                 Upgrade Now
               </Button>

@@ -116,7 +116,7 @@ const WhatsAppFlows = () => {
           <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Whatsapp Flows - idea bot</h1>
         </div>
         <div className="flex items-center gap-2">
-          <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+          <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
             <Plus className="w-4 h-4 mr-2" />
             Create Flow
           </Button>
@@ -148,7 +148,7 @@ const WhatsAppFlows = () => {
             onClick={() => setActiveTab('system')}
             className={`px-4 py-2 text-sm font-medium rounded-md ${
               activeTab === 'system' 
-                ? 'bg-[#16a34a] text-white' 
+                ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white' 
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -158,14 +158,14 @@ const WhatsAppFlows = () => {
             onClick={() => setActiveTab('user')}
             className={`px-4 py-2 text-sm font-medium rounded-md ${
               activeTab === 'user' 
-                ? 'bg-[#16a34a] text-white' 
+                ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white' 
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
             User Flows
           </button>
         </div>
-        <Button className="bg-[#16a34a] hover:bg-[#15803d] text-white">
+        <Button className="bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
           Upgrade
         </Button>
       </div>
@@ -178,7 +178,7 @@ const WhatsAppFlows = () => {
               <div key={flow.id} className="bg-white rounded-xl shadow-lg p-4 max-w-sm mx-auto">
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-6 h-6 bg-[#16a34a] rounded-full"></div>
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full"></div>
                   <h3 className="text-sm font-semibold text-gray-900">{flow.name}</h3>
                   <div className="flex items-center gap-1">
                     <button className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600">
@@ -285,7 +285,7 @@ const WhatsAppFlows = () => {
           <div className="flex flex-col items-center justify-center h-96">
             <div className="relative mb-6">
               {/* Main folder with X */}
-              <div className="w-24 h-24 bg-[#16a34a] rounded-lg flex items-center justify-center relative z-10">
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center relative z-10">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <X className="w-8 h-8 text-gray-400" />
                 </div>
@@ -305,7 +305,7 @@ const WhatsAppFlows = () => {
                   {/* Hair */}
                   <div className="w-10 h-6 bg-gray-800 rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
                   {/* Body */}
-                  <div className="w-8 h-12 bg-[#16a34a] rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
+                  <div className="w-8 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded absolute top-6 left-1/2 transform -translate-x-1/2"></div>
                   {/* Skirt */}
                   <div className="w-10 h-8 bg-black absolute top-16 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
                   <div className="w-2 h-2 bg-white absolute top-18 left-1/2 transform -translate-x-1/2 rounded"></div>
@@ -336,7 +336,7 @@ const WhatsAppFlows = () => {
             <div className="bg-gray-100 p-4 rounded-t-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#16a34a] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
                     <div className="w-4 h-4 bg-white rounded-full"></div>
                   </div>
                   <h2 className="text-lg font-bold text-gray-900">Customer Onboarding Bot</h2>
@@ -402,7 +402,7 @@ const WhatsAppFlows = () => {
                 </div>
               </div>
 
-              <Button className="w-full bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="w-full bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 Start Setup
               </Button>
             </div>
@@ -418,7 +418,7 @@ const WhatsAppFlows = () => {
             <div className="bg-gray-100 p-4 rounded-t-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#16a34a] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
                     <div className="w-4 h-4 bg-white rounded-full"></div>
                   </div>
                   <h2 className="text-lg font-bold text-gray-900">Support Bot Assistant</h2>
@@ -474,7 +474,7 @@ const WhatsAppFlows = () => {
                 </div>
               </div>
 
-              <Button className="w-full bg-[#16a34a] hover:bg-[#15803d] text-white">
+              <Button className="w-full bg-black hover:bg-gray-800 text-white shadow-lg shadow-blue-500/25 text-white">
                 Get Help
               </Button>
             </div>
