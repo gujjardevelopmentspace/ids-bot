@@ -1,7 +1,7 @@
-# 🚀 Flaxxa Dash Weaver - WhatsApp Business API Dashboard
+# 🎨 Inventer Design Studio - WhatsApp Business API Platform
 
 <div align="center">
-  <img src="src/assets/logo.png" alt="Flaxxa Dash Weaver Logo" width="200" height="200">
+  <img src="src/assets/logo.png" alt="Inventer Design Studio Logo" width="200" height="200">
   
   [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
@@ -9,7 +9,7 @@
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0+-teal.svg)](https://tailwindcss.com/)
   [![Shadcn/ui](https://img.shields.io/badge/Shadcn%2Fui-Latest-green.svg)](https://ui.shadcn.com/)
   
-  **A comprehensive WhatsApp Business API management dashboard built with modern web technologies**
+  **Professional WhatsApp Business API platform with sophisticated design and modern web technologies**
 </div>
 
 ## 🌟 About Me
@@ -213,3 +213,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <p>Made with ❤️ by <strong>M.Yahya Ahsan</strong></p>
   <p>⭐ Star this repository if you found it helpful!</p>
 </div>
+
